@@ -37,9 +37,19 @@ angular.module('controllers', [])
         };
     })
 
+    .controller('LoginCtrl', function ($scope, $localStorage, base64) {
+        $scope.loginData = {};
+
+        $scope.doLogin = function () {
+            var $auth = base64.encode($scope.loginData.username + ':' + $scope.loginData.password);
+            console.log($auth);
+        };
+    })
+
+
     .controller('PlaylistsCtrl', function ($scope, $localStorage) {
-        if (!$localStorage.login) {
-            $state.go('app.login');
+        if ($localStorage.login != 'login') {
+            $state.go('app.search');
         }
 
         $scope.playlists = [
