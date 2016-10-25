@@ -3,7 +3,9 @@ var app = angular.module('myApp', [
     'controllers',
     'ui.router',
     'ngStorage',
-    'ab-base64'
+    'ab-base64',
+    'service',
+    'factory'
 ]);
 
 app.run(function ($ionicPlatform) {
@@ -28,15 +30,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'AppCtrl'
         })
 
-        .state('app.search', {
-            url: '/search',
-            views: {
-                'menuContent': {
-                    templateUrl: 'templates/search.html'
-                }
-            }
-        })
-
         .state('app.browse', {
             url: '/browse',
             views: {
@@ -45,35 +38,77 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        .state('app.playlists', {
-            url: '/playlists',
+
+
+        /*.state('app.profile', {
+            url: '/profile',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/playlists.html',
-                    controller: 'PlaylistsCtrl'
+                    templateUrl: 'templates/profile.html',
+                    controller: 'ProfileCtrl'
+                }
+            }
+        })*/
+
+        .state('app.cities', {
+            url: '/cities',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/cities.html',
+                    controller: 'CitiesCtrl'
                 }
             }
         })
 
-        .state('app.single', {
-            url: '/playlists/:playlistId',
+        .state('app.vuzs', {
+            url: '/vuzs/:id',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/playlist.html',
-                    controller: 'PlaylistCtrl'
+                    templateUrl: 'templates/vuzs.html',
+                    controller: 'VuzsCtrl'
                 }
             }
         })
 
-        .state('app.login', {
-            url: '/login',
+        .state('app.vuzPreview', {
+            url: '/vuzPreview/:id',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/login.html',
-                    controller: 'LoginCtrl'
+                    templateUrl: 'templates/vuzPreview.html',
+                    controller: 'VuzPreviewCtrl'
+                }
+            }
+        })
+
+        .state('app.vuzImages', {
+            url: '/vuzImages',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/vuzImages.html',
+                    controller: 'VuzImagesCtrl'
+                }
+            }
+        })
+
+        .state('app.search', {
+            url: '/search',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/search.html',
+                    controller: 'SearchCtrl'
+                }
+            }
+        })
+
+        .state('app.reviews', {
+            url: '/reviews',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/reviews.html',
+                    controller: 'ReviewsCtrl'
                 }
             }
         });
 
-    $urlRouterProvider.otherwise('/app/login');
+    $urlRouterProvider.otherwise('/app/cities');
 });

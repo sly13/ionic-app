@@ -1,0 +1,30 @@
+<ion-view view-title="Отзывы">
+	<ion-content>
+		<ion-list>
+			<div class="list card" ng-repeat="review in reviews">
+
+				<div class="item item-avatar">
+
+					<img src="{{domain}}{{review.image}}">
+					<h2>{{review.username}}</h2>
+					<p>{{review.vuz}}</p>
+				</div>
+
+				<div class="item item-body">
+					<img class="full-image" src="{{domain}}{{review.image}}">
+					<p>
+						{{review.text}}
+					</p>
+					<p>
+						<span href="#" class="subdued">{{review.timeCreated}}</span>
+					</p>
+				</div>
+
+			</div>
+
+		</ion-list>
+		<label class="item">
+			<button class="button button-block button-positive">Загрузить</button>
+		</label>
+	</ion-content>
+</ion-view>

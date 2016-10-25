@@ -1,0 +1,37 @@
+<ion-view view-title="Пользователи">
+	<ion-content>
+		<div class="list card">
+
+			<div class="item item-avatar">
+
+				<img src="{{domain}}images/user.jpg">
+				<h2>{{profile.name}}</h2>
+				<p>{{profile.email}}</p>
+			</div>
+
+			<div class="item item-body">
+				<p>
+					Администритор сайта : <a href="{{domain}}" target="_blank">{{domain}}</a> <br>
+					Группа : {{profile.group}}<br>
+				</p>
+				<p>
+					<span href="#" class="subdued">Дата создания : {{profile.timeCreated}}</span>
+				</p>
+			</div>
+
+		</div>
+
+		<label class="item">
+			<button class="button button-block button-positive" ng-click="addUserModal()">Добавить</button>
+		</label>
+
+		<ion-list>
+			<ion-item ng-repeat="user in users">
+				{{user.name}} - {{user.group}}
+			</ion-item>
+		</ion-list>
+
+	</ion-content>
+</ion-view>
+
+

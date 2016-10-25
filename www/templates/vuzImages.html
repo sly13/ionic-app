@@ -1,0 +1,31 @@
+<ion-view view-title="Одежда с логотипом">
+	<ion-content>
+
+		<ion-list>
+			<div class="item item-avatar">
+				<h2>Man</h2>
+			</div>
+			<ion-item ng-repeat="imageMan in imagesMan">
+				<div class="list card">
+					<div class="item item-body">
+						<img class="full-image" src="{{domain}}{{imageMan.image}}">
+					</div>
+				</div>
+			</ion-item>
+		</ion-list>
+
+		<ion-list>
+			<div class="item item-avatar">
+				<h2>Women</h2>
+			</div>
+			<ion-item ng-repeat="imageWomen in imagesWomen">
+				<div class="list card">
+					<div class="item item-body">
+						<img class="full-image" src="{{domain}}{{imageWomen.image}}">
+					</div>
+				</div>
+			</ion-item>
+		</ion-list>
+
+	</ion-content>
+</ion-view>

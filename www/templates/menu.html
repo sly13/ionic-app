@@ -14,25 +14,61 @@
 
 	<ion-side-menu side="left">
 		<ion-header-bar class="bar-stable">
-			<h1 class="title">Menu</h1>
+			<h1 class="title">Меню</h1>
 		</ion-header-bar>
 		<ion-content>
-			<ion-list>
-				<ion-item menu-close ng-click="login()">
-					Login
-				</ion-item>
-				<ion-item menu-close href="#/app/search">
-					Search
-				</ion-item>
-				<ion-item menu-close href="#/app/browse">
-					Browse
-				</ion-item>
-				<ion-item menu-close href="#/app/playlists">
-					Playlists
+			<ion-list >
+				<!--<a class="item item-icon-left item-icon-right" menu-close href="#/app/profile">
+					<i class="icon ion-ios-people"></i>
+					Пользователи
+					<i class="icon ion-chevron-right icon-accessory"></i>
+				</a>-->
+				<a class="item item-icon-left item-icon-right" menu-close href="#/app/cities">
+					<i class="icon ion-ios-home-outline"></i>
+					Категории
+					<i class="icon ion-chevron-right icon-accessory"></i>
+				</a>
+				<a class="item item-icon-left item-icon-right" menu-close href="#/app/reviews">
+					<i class="icon ion-ios-chatbubble-outline"></i>
+					Отзывы
+					<i class="icon ion-chevron-right icon-accessory"></i>
+				</a>
+
+				<a class="item item-icon-left item-icon-right" menu-close href="#/app/search">
+					<i class="icon ion-ios-search"></i>
+					Поиск вуза
+					<i class="icon ion-chevron-right icon-accessory"></i>
+				</a>
+
+				<a class="item item-icon-left item-icon-right" menu-close href="#/app/search">
+					<i class="icon ion-ios-information-outline"></i>
+					О компании
+					<i class="icon ion-chevron-right icon-accessory"></i>
+				</a>
+
+				<a class="item item-icon-left item-icon-right" menu-close href="#/app/search">
+					<i class="icon ion-ios-cart-outline"></i>
+					Оплата и доставка
+					<i class="icon ion-chevron-right icon-accessory"></i>
+				</a>
+
+				<a class="item item-icon-left item-icon-right" menu-close href="#/app/search">
+					<i class="icon ion-ios-location-outline"></i>
+					Контакты
+					<i class="icon ion-chevron-right icon-accessory"></i>
+				</a>
+				<!--<ion-item menu-close href="#/app/cities">
+					Категории
+				</ion-item>-->
+				<!--<ion-item menu-close href="#/app/reviews">
+					Отзывы
+				</ion-item>-->
+				<!--<ion-item menu-close href="#/app/search">
+					Поиск
 				</ion-item>
 				<ion-item menu-close ng-click="logout()">
-					Logout
-				</ion-item>
+					Выйти
+				</ion-item>-->
 			</ion-list>
 		</ion-content>
 	</ion-side-menu>

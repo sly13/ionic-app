@@ -1,0 +1,49 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<h1 class="title">Добавление пользователя</h1>
+		<div class="buttons">
+			<button class="button button-clear" ng-click="closeLogin()">Close</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<form name="addUserForm" ng-submit="addUser(user)">
+			<div class="list">
+				<label class="item item-input">
+					<span class="input-label">Имя</span>
+					<input type="text" ng-model="user.name" name="username" required autocomplete="off">
+					<span ng-show="addUserForm.username.$error.required && addUserForm.username.$dirty">
+						<span class="icon ion-close-circled" style="color: red"></span>
+					</span>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Email</span>
+					<input type="email" ng-model="user.email" name="email" required autocomplete="off">
+					<span ng-show="addUserForm.email.$error.required && addUserForm.email.$dirty && addUserForm.email.email">
+						<span class="icon ion-close-circled" style="color: red"></span>
+					</span>
+				</label>
+				<label class="item item-input item-select">
+					<span class="input-label">Группа</span>
+					<select name="group" ng-model="user.group" required>
+						<option value="admin" selected>Администратор</option>
+						<option value="manager">Менеджер</option>
+					</select>
+					<span ng-show="addUserForm.group.$error.required && addUserForm.group.$dirty">bad</span>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Пароль</span>
+					<input type="password" ng-model="user.password" name="password" required>
+					<span ng-show="addUserForm.password.$error.required && addUserForm.password.$dirty">
+						<span class="icon ion-close-circled" style="color: red"></span>
+					</span>
+				</label>
+
+				<div class="button-bar">
+					<button class="button button-positive" type="submit" ng-disabled="addUserForm.$invalid">Создать</button>
+					<button class="button button-assertive" ng-click="doClose()">Отмена</button>
+				</div>
+
+			</div>
+		</form>
+	</ion-content>
+</ion-modal-view>

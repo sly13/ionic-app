@@ -1,0 +1,27 @@
+<ion-view view-title="Одежда с логотипом">
+	<ion-content>
+
+		<ion-list>
+			<ion-item ng-repeat="preview in previews" ng-click="showImage(preview.id)">
+				<div class="list card">
+
+					<div class="item item-avatar">
+						<h2>{{preview.name}}</h2>
+					</div>
+
+					<div class="item item-body">
+						<img class="full-image" src="{{domain}}{{preview.image}}">
+						<p>
+							{{preview.description}}
+						</p>
+						<p>
+							<span href="#" class="subdued">{{preview.price}}</span>
+						</p>
+					</div>
+
+				</div>
+			</ion-item>
+		</ion-list>
+
+	</ion-content>
+</ion-view>
